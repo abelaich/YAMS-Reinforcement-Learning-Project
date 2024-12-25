@@ -7,6 +7,11 @@
 
 <h3>Example of a Round</h3>
 <p>For example, imagine a player rolls a 1, 2, 2, 3, and 5 on their first roll. The player decides to re-roll the 3 and 5, obtaining a 2 and 4. The player re-rolls the 4 again and gets another 2, resulting in a final roll of 1, 2, 2, 2, 2. The player then assigns this roll to the "Twos" category, where the score is the sum of all dice that show a 2. In this case, the score would be 2 + 2 + 2 + 2 = 8 points for that round.</p>
+<div style="text-align: center;">
+    <img alt="image" src="https://th.bing.com/th/id/R.50770cd1a8da1fa8bb6cf1661c0c1e1b?rik=QFV9KTnRCf%2buPA&riu=http%3a%2f%2fwww.neopoker.fr%2fwp-content%2fuploads%2f2013%2f02%2fGrille-de-Yams.jpg&ehk=ty1O63p0oIB92rX0KArFVCgsGVUYgyAq1WCReuNW2o4%3d&risl=&pid=ImgRaw&r=0" />
+</div>
+
+
 
 <h2>Components</h2>
 
@@ -95,3 +100,62 @@
         <td>This is a single-agent environment, where only one player interacts with the environment.</td>
     </tr>
 </table>
+
+
+<h1>Results</h1>
+<h2>1. Random Agent</h2>
+<ul>
+    <li><strong>Score max:</strong> 186</li>
+    <li><strong>Score min:</strong> 82</li>
+    <li><strong>Score moyen:</strong> 119.01</li>
+</ul>
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/4e527744-0f5d-450f-a5ca-62ebcdd08616" />
+
+<h2>2. Greedy Agents</h2>
+<ul>
+  <li><strong>Greedy Agent Level 1</strong>: It never re-rolls the dice after the first roll and chooses the action that immediately maximizes its score.</li>
+  <li><strong>Greedy Agent Level 2</strong>: It can re-roll once and chooses the action that maximizes the expected score after one re-roll.</li>
+  <li><strong>Greedy Agent Level 3</strong>: It can re-roll twice and chooses the action that maximizes the expected score after two re-rolls.</li>
+</ul>
+<div style="display: flex; justify-content: space-around;">
+    <img alt="image" src="https://github.com/user-attachments/assets/4bf79806-199a-482b-9e8c-b1fa25f54ed4" style="width: 30%; height: 200px;" />
+<img alt="image" src="https://github.com/user-attachments/assets/047a7fe4-5e04-4357-81fe-847755e2f8cc" style="width: 30%; height: 200px;" />
+<img alt="image" src="https://github.com/user-attachments/assets/c1aed571-7312-4365-9b41-625faa5bf1be" style="width: 30%; height: 200px;" />
+</div>
+
+<h2>3. Q-learning and SARSA Agent</h2>
+<ul>
+    <li><strong>SARSA Update</strong>:<br>
+        <code>Q(s, a) ← Q(s, a) + α [ r + γ Q(s', a') - Q(s, a) ]</code><br>
+        where <em>a'</em> is the next action chosen by the policy in the next state <em>s'</em>.
+        <img width="800" alt="image" src="https://github.com/user-attachments/assets/d73d0950-45b6-44fb-a36f-cf0faec7b748" />
+    </li>
+    <li><strong>Q-Learning Update</strong>:<br>
+        <code>Q(s, a) ← Q(s, a) + α [ r + γ max<sub>a'</sub> Q(s', a') - Q(s, a) ]</code><br>
+        Q-Learning uses the best possible Q value without considering the agent's current policy.
+        <img width="800" alt="image" src="https://github.com/user-attachments/assets/5e202d38-31d4-4ca7-99a7-def6f3cdaf04" />
+    </li>
+</ul>
+
+
+
+<h2>4. Perceptron Q-learning Agent</h2>
+<p>Ref : https://web.stanford.edu/class/aa228/reports/2018/final75.pdf (Paper Reinforcement Learning for Solving Yahtzee)</p>
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/91e2d15d-bca7-44f2-97a9-3c348a476f0d" />
+
+<h1>Conclusion</h2>
+<ul>
+  <li>Number of dice: 5</li>
+  <li>Number of faces per die: 6</li>
+  <li>Epsilon (exploration): 0.2</li>
+  <li>Alpha (learning rate): 0.01</li>
+  <li>Gamma (discount factor): 0.9</li>
+  <li>Maximum number of turns per game: 7</li>
+</ul>
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/16886e9e-5522-4b6f-9a0d-ff4236e9fdd1" />
+
+
+
+
+
+
